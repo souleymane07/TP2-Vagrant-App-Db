@@ -371,7 +371,7 @@ EXIT;
 
 3.3 Configuration connexions distantes
 sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
-# Modifier : bind-address = 0.0.0.0
+(Modifier : bind-address = 0.0.0.0)
 sudo systemctl restart mysql
 
 4. Tests
@@ -379,7 +379,7 @@ sudo systemctl restart mysql
 4.1 Depuis srv-app
 sudo apt install -y mysql-client
 mysql -h 192.168.33.11 -u etudiant_user -p -e "SHOW DATABASES;"
-# Mot de passe: password
+(Mot de passe: password)
 
 4.2 Création table
 mysql -h 192.168.33.11 -u etudiant_user -p etudiant_db -e "
