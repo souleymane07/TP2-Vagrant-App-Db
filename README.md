@@ -16,9 +16,9 @@ Créer deux machines virtuelles avec Vagrant :
 
 ### 1.1 Configuration du Vagrantfile
 
-Le fichier `Vagrantfile` définit deux machines avec leurs caractéristiques :
+Le fichier Vagrantfile définit deux machines avec leurs caractéristiques :
 
-```ruby
+
 Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/jammy64"
   config.vm.box_check_update = false
@@ -27,8 +27,7 @@ Vagrant.configure("2") do |config|
   config.vm.define "srv-app" do |app|
     app.vm.hostname = "srv-app"
     app.vm.network "private_network", ip: "192.168.33.10"
-    app.vm.network "forwarded_port", guest: 8080, host: 8080  # Pour Tomcat
-    
+    app.vm.network "forwarded_port", guest: 8080, host: 8080
     app.vm.provider "virtualbox" do |vb|
       vb.gui = true
       vb.memory = "2048"
@@ -42,7 +41,6 @@ Vagrant.configure("2") do |config|
     db.vm.hostname = "srv-db"
     db.vm.network "private_network", ip: "192.168.33.11"
     db.vm.network "forwarded_port", guest: 3306, host: 3307  # MySQL sur port 3307
-    
     db.vm.provider "virtualbox" do |vb|
       vb.gui = true
       vb.memory = "1024"
@@ -51,7 +49,8 @@ Vagrant.configure("2") do |config|
     end
   end
 end
-```
+
 ## Partie 2 : Lancement des machines
 vagrant up
 
+<img width="1459" height="703" alt="image" src="https://github.com/user-attachments/assets/9c994582-e679-4fee-bc28-4c6d89c77475" />
