@@ -54,3 +54,4 @@ end
 ```
 ## Partie 2 : Lancement des machines
 vagrant up
+
